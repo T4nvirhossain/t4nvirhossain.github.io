@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Google SEO Meta Tags -->
+  <title>Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran</title>
+  <meta name="title" content="Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran" />
+  <meta name="description" content="Official 3D portfolio of Tanvir Hossain (TANVIR TRADER / @T4nviRhossain). Based in Italy (4.5+ years), roots in Madaripur, Bangladesh. 4+ years Binary Options (Quotex), Forex Trader & 7.5+ years Free Fire veteran." />
+  <meta name="keywords" content="Tanvir Hossain, TANVIR TRADER, T4nviRhossain, tanvir_hossain_91, Tanvir Hossain Madaripur, Tanvir Trader Italy, Quotex Trader, Forex Trader, Free Fire Veteran, Gaming Portfolio" />
+  <meta name="author" content="Tanvir Hossain" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Social Media Link Preview -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Tanvir Hossain | TANVIR TRADER (@T4nviRhossain)" />
+  <meta property="og:description" content="🇮🇹 Italy (4.5+ Yrs) | 🇧🇩 Madaripur, BD • 4+ Yrs Quotex & Forex Trader • 7.5+ Yrs Free Fire Veteran." />
+
+  <!-- Structured Data (JSON-LD) for Google & AI Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Tanvir Hossain",
+    "alternateName": ["TANVIR TRADER", "T4nviRhossain", "tanvir_hossain_91"],
+    "description": "Independent Market Trader (Quotex Binary Options & Forex) and 7.5+ year Free Fire gaming veteran originally from Madaripur, Bangladesh and living in Italy for 4.5+ years.",
+    "jobTitle": "Market Trader & Gaming Veteran",
+    "homeLocation": { "@type": "Country", "name": "Italy" },
+    "birthPlace": {
+      "@type": "Place",
+      "address": { "@type": "PostalAddress", "addressLocality": "Madaripur", "addressCountry": "Bangladesh" }
+    },
+    "sameAs": [
+      "https://t.me",
+      "https://instagram.com",
+      "https://facebook.com",
+      "https://tiktok.com"
+    ],
+    "knowsAbout": ["Binary Options", "Quotex", "Forex Trading", "Price Action", "Free Fire Gaming"]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-void: #03050c;
+      --bg-panel: rgba(11, 17, 32, 0.86);
+      --bg-card: rgba(255, 255, 255, 0.038);
+      --neon-cyan: #00f2fe;
+      --neon-purple: #a855f7;
+      --neon-emerald: #10b981;
+      --neon-amber: #f59e0b;
+      --neon-pink: #ec4899;
+      --text-main: #f8fafc;
+      --text-dim: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(0, 242, 254, 0.16), transparent 42%),
+        radial-gradient(circle at 88% 82%, rgba(168, 85, 247, 0.16), transparent 45%),
+        linear-gradient(rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 26px 14px;
+      perspective: 1500px;
+      overflow-x: hidden;
+    }
+
+    /* Animated Cyber-Gaming Background Orbs */
+    .cyber-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(95px);
+      z-index: -1;
+      pointer-events: none;
+      animation: orbDrift 11s ease-in-out infinite alternate;
+    }
+    .orb-cyan { width: 380px; height: 380px; background: rgba(0, 242, 254, 0.18); top: -90px; left: -90px; }
+    .orb-purple { width: 420px; height: 420px; background: rgba(168, 85, 247, 0.18); bottom: -110px; right: -90px; animation-delay: 3s; }
+
+    @keyframes orbDrift {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(35px, -35px) scale(1.1); }
+    }
+
+    /* Main 3D Gaming-Trader Container */
+    .cyber-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 980px;
+      background: var(--bg-panel);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 28px;
+      padding: 40px;
+      border: 1px solid rgba(0, 242, 254, 0.35);
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.85),
+        0 0 38px rgba(0, 242, 254, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      transform-style: preserve-3d;
+      transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
+      animation: entrance3D 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes entrance3D {
+      from { opacity: 0; transform: translateY(28px) rotateX(6deg) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); }
+    }
+
+    /* Header Section */
+    .top-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid var(--border-subtle);
+      transform: translateZ(38px);
+    }
+
+    .badge-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 5px 13px;
+      border-radius: 999px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .pill-trader { background: rgba(0, 242, 254, 0.14); color: var(--neon-cyan); border: 1px solid rgba(0, 242, 254, 0.4); }
+    .pill-gamer { background: rgba(168, 85, 247, 0.16); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.45); }
+    .pill-italy { background: rgba(16, 185, 129, 0.14); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .pill-bd { background: rgba(245, 158, 11, 0.14); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+    h1 {
+      font-size: 2.55rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(95deg, #ffffff 25%, var(--neon-cyan) 65%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sub-line {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    /* Interactive Ripple Button */
+    .action-btn {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.16), rgba(168, 85, 247, 0.16));
+      color: #ffffff;
+      border: 1px solid rgba(0, 242, 254, 0.45);
+      padding: 11px 20px;
+      border-radius: 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 22px rgba(0, 242, 254, 0.35);
+    }
+
+    .action-btn:active {
+      transform: scale(0.94);
+    }
+
+    /* 4-Card Stats Grid */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+      transform: translateZ(28px);
+    }
+
+    .stat-tile {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 20px;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      cursor: pointer;
+    }
+
+    .stat-tile:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 14px 32px rgba(0, 242, 254, 0.15);
+    }
+
+    .stat-tile:active {
+      transform: scale(0.97);
+    }
+
+    .stat-tile.gaming:hover {
+      border-color: var(--neon-purple);
+      box-shadow: 0 14px 32px rgba(168, 85, 247, 0.2);
+    }
+
+    .stat-tile .kicker {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .stat-tile .big-num {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--neon-cyan);
+      margin-bottom: 5px;
+    }
+
+    .stat-tile.gaming .big-num {
+      color: #d8b4fe;
+    }
+
+    .stat-tile .desc {
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+    }
+
+    /* Bio & Dual Skill Grid */
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      margin-bottom: 28px;
+      transform: translateZ(22px);
+    }
+
+    @media (max-width: 820px) {
+      .dual-grid { grid-template-columns: 1fr; }
+    }
+
+    .glass-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .glass-box h2 {
+      font-size: 1.15rem;
+      margin-bottom: 14px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .glass-box p {
+      color: var(--text-dim);
+      font-size: 0.94rem;
+      line-height: 1.72;
+      margin-bottom: 12px;
+    }
+
+    .glass-box p:last-child { margin-bottom: 0; }
+
+    .quest-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .quest-item {
+      padding-left: 14px;
+      border-left: 2px solid var(--neon-cyan);
+    }
+
+    .quest-item.ff {
+      border-left-color: var(--neon-purple);
+    }
+
+    .quest-item strong {
+      display: block;
+      font-size: 0.92rem;
+      color: #f1f5f9;
+      margin-bottom: 3px;
+    }
+
+    .quest-item span {
+      font-size: 0.83rem;
+      color: var(--text-dim);
