@@ -1,416 +1,370 @@
+/* =========================================================
+   TANVIR TRADER (@T4nviRhossain) - PREMIUM 3D NEON GLASS CSS
+   ========================================================= */
 
-/* =========================================
-   TANVIR TRADER - PREMIUM 3D DESIGN
-   Dark Neon | Glassmorphism | Animations
-========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://googleapis.com');
 
 :root {
-  --bg: #070812;
-  --surface: #101426;
-  --primary: #8b5cf6;
-  --secondary: #00d9ff;
-  --accent: #00ffb3;
-  --text: #f5f5ff;
-  --muted: #a5abc2;
-  --glass: rgba(255,255,255,0.055);
-  --border: rgba(255,255,255,0.12);
+  --bg-dark: #06060b;
+  --bg-card: rgba(18, 19, 32, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.22);
+  
+  /* Neon Accents (Trading Bullish Cyan + Gaming Electric Purple + Gold) */
+  --neon-cyan: #00f5d4;
+  --neon-purple: #9b5de5;
+  --neon-blue: #00bbf9;
+  --neon-gold: #fee440;
+  
+  --text-main: #f4f6fb;
+  --text-muted: #9aa0b8;
+  
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --shadow-3d: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+  --glow-cyan: 0 0 20px rgba(0, 245, 212, 0.45);
+  --glow-purple: 0 0 25px rgba(155, 93, 229, 0.45);
 }
 
+/* =========================================================
+   1. RESET & ANIMATED CYBER-GRID BACKGROUND
+   ========================================================= */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(ellipse at 15% 10%, rgba(139,92,246,.18), transparent 40%),
-    radial-gradient(ellipse at 85% 35%, rgba(0,217,255,.12), transparent 40%),
-    radial-gradient(ellipse at 50% 90%, rgba(0,255,179,.07), transparent 40%),
-    var(--bg);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.65;
   overflow-x: hidden;
-  line-height: 1.7;
+  perspective: 1200px; /* 3D Depth */
+  position: relative;
 }
 
-/* Background glow */
+/* Animated Floating Ambient Neon Orbs */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(130px);
+  z-index: -2;
+  opacity: 0.35;
+  animation: floatOrb 14s infinite alternate ease-in-out;
+  pointer-events: none;
+}
 
 body::before {
+  background: radial-gradient(circle, var(--neon-cyan), transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+body::after {
+  background: radial-gradient(circle, var(--neon-purple), transparent 70%);
+  bottom: -120px;
+  right: -100px;
+  animation-delay: -7s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-40px, 80px) scale(0.95); }
+}
+
+/* Subtle Trading Chart Grid Overlay */
+.bg-grid,
+body > div:first-child::before {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  z-index: -1;
-  background-image:
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-image: 
+    linear-gradient(rgba(0, 245, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(155, 93, 229, 0.03) 1px, transparent 1px);
   background-size: 45px 45px;
-  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Selection */
-
-::selection {
-  background: var(--primary);
-  color: white;
+/* =========================================================
+   2. TYPOGRAPHY & NEON GRADIENT HEADINGS
+   ========================================================= */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
-/* Main layout */
-
-main {
-  width: min(1100px, 92%);
-  margin: auto;
-}
-
-header {
-  position: relative;
-  z-index: 10;
-}
-
-/* Navigation */
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 20px;
-}
-
-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  padding: 9px 17px;
-  border: 1px solid transparent;
-  border-radius: 30px;
-  transition: .3s ease;
-}
-
-nav a:hover {
-  color: white;
-  background: rgba(139,92,246,.15);
-  border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(139,92,246,.25);
-  transform: translateY(-3px);
-}
-
-/* Hero */
-
-header h1,
 h1 {
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 900;
-  letter-spacing: -3px;
-  line-height: 1.1;
-  background: linear-gradient(
-    110deg,
-    #ffffff,
-    #a78bfa,
-    #00d9ff,
-    #ffffff
-  );
-  background-size: 250% auto;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  background: linear-gradient(135deg, #ffffff 20%, var(--neon-cyan) 60%, var(--neon-purple) 100%);
   -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradientFlow 6s linear infinite;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 30px rgba(0, 245, 212, 0.2);
 }
 
-header h2,
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.7rem);
-  font-weight: 800;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+  box-shadow: var(--glow-cyan);
 }
 
 h3 {
-  color: #c4b5fd;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--neon-cyan);
+  margin-bottom: 0.5rem;
 }
 
 p {
-  color: var(--muted);
+  color: var(--text-muted);
+  font-size: 1rem;
 }
 
-/* Section */
+/* =========================================================
+   3. GLASSMORPHISM NAVIGATION & HEADER
+   ========================================================= */
+header, nav {
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 14px 28px;
+  background: rgba(12, 14, 24, 0.65);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-highlight);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a, header a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+nav a:hover, header a:hover {
+  color: var(--neon-cyan);
+  background: rgba(0, 245, 212, 0.08);
+  text-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+}
+
+/* =========================================================
+   4. LAYOUT CONTAINERS & SECTIONS
+   ========================================================= */
+main, .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 section {
-  padding: 65px 0;
+  padding: 75px 0;
   position: relative;
-  animation: fadeUp .8s ease both;
 }
 
-section h2 {
-  position: relative;
-  display: inline-block;
+/* =========================================================
+   5. HERO SECTION & 3D PROFILE FRAME
+   ========================================================= */
+.hero, section:first-of-type {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 82vh;
 }
 
-section h2::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 55%;
-  margin-top: 10px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  box-shadow: 0 0 15px var(--primary);
+.badge, .subtitle, .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+  background: rgba(0, 245, 212, 0.08);
+  border: 1px solid rgba(0, 245, 212, 0.3);
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.15);
+  margin-bottom: 18px;
 }
 
-/* Glass cards */
-
-article,
-.card,
-[class*="card"],
-[class*="stat"] {
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,.09),
-    rgba(255,255,255,.025)
-  );
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  padding: 25px;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.25),
-    inset 0 1px 0 rgba(255,255,255,.08);
-  transition:
-    transform .4s cubic-bezier(.2,.8,.2,1),
-    border-color .4s,
-    box-shadow .4s;
+/* 3D Floating Profile Avatar / Photo */
+.hero img, .profile-img, .avatar {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 2px solid rgba(0, 245, 212, 0.4);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.8),
+    0 0 35px rgba(0, 245, 212, 0.25),
+    0 0 60px rgba(155, 93, 229, 0.2);
   transform-style: preserve-3d;
+  animation: heroFloat3D 6s ease-in-out infinite;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-article:hover,
-.card:hover,
-[class*="card"]:hover,
-[class*="stat"]:hover {
-  transform: translateY(-10px) perspective(900px) rotateX(3deg);
-  border-color: rgba(139,92,246,.65);
-  box-shadow:
-    0 25px 55px rgba(0,0,0,.4),
-    0 0 25px rgba(139,92,246,.18);
+.hero img:hover, .profile-img:hover {
+  transform: rotateY(-8deg) rotateX(6deg) scale(1.03);
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.9),
+    0 0 45px rgba(0, 245, 212, 0.5);
 }
 
-/* Numbers and highlights */
-
-strong,
-b {
-  color: #c4b5fd;
+@keyframes heroFloat3D {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  50% { transform: translateY(-14px) rotateX(3deg) rotateY(-4deg); }
 }
 
-article strong {
-  color: var(--accent);
-}
-
-/* Buttons */
-
-button,
-[role="button"],
-a.button {
-  position: relative;
-  display: inline-block;
-  padding: 13px 25px;
+/* =========================================================
+   6. NEON 3D INTERACTIVE BUTTONS
+   ========================================================= */
+button, .btn, .copy-btn, a[role="button"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #05060a;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-blue));
+  border: none;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.2);
-  background: linear-gradient(120deg, #7c3aed, #2563eb);
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 245, 212, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
   overflow: hidden;
-  transition: .35s ease;
-  box-shadow: 0 8px 25px rgba(124,58,237,.3);
 }
 
-button:hover,
-[role="button"]:hover,
-a.button:hover {
-  transform: translateY(-5px) scale(1.04);
-  box-shadow: 0 12px 35px rgba(0,217,255,.3);
+button:hover, .btn:hover, .copy-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 16px 35px rgba(0, 245, 212, 0.55), 0 0 20px var(--neon-cyan);
 }
 
-/* Links */
-
-a {
-  color: var(--secondary);
-  transition: .3s ease;
+button:active, .btn:active {
+  transform: translateY(1px) scale(0.98);
 }
 
-a:hover {
-  color: #c4b5fd;
+/* Secondary Glass Button */
+.btn-secondary, .btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--glass-highlight);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Timeline */
-
-li {
-  color: var(--muted);
-  margin-bottom: 12px;
+.btn-secondary:hover, .btn-outline:hover {
+  border-color: var(--neon-purple);
+  background: rgba(155, 93, 229, 0.15);
+  box-shadow: var(--glow-purple);
+  color: #ffffff;
 }
 
-li::marker {
-  color: var(--primary);
+/* =========================================================
+   7. 3D GLASSMORPHISM CARDS (ABOUT, WHAT I DO, STATS)
+   ========================================================= */
+.grid, .cards, .stats-grid, .social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
 }
 
-/* FAQ */
-
-details,
-details[open] {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 18px 22px;
-  margin: 12px 0;
-  transition: .3s ease;
+.card, article, .stat-box, .journey-item, .faq-item, details {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-top: 1px solid var(--glass-highlight);
+  border-left: 1px solid var(--glass-highlight);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--shadow-3d);
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-details:hover {
-  border-color: var(--primary);
-  box-shadow: 0 0 20px rgba(139,92,246,.12);
+/* Subtle Neon Shine Sweep on Hover */
+.card::before, article::before, .stat-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.65s ease;
 }
 
-summary {
-  cursor: pointer;
-  color: white;
-  font-weight: 700;
+.card:hover::before, article:hover::before, .stat-box:hover::before {
+  left: 140%;
 }
 
-/* Images */
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 18px;
-  transition: .5s ease;
+.card:hover, article:hover, .stat-box:hover {
+  transform: translateY(-8px) rotateX(4deg) rotateY(-3deg);
+  border-color: rgba(0, 245, 212, 0.45);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.85),
+    0 0 25px rgba(0, 245, 212, 0.2),
+    inset 0 0 15px rgba(0, 245, 212, 0.05);
 }
 
-img:hover {
-  transform: scale(1.035);
-  filter: saturate(1.2);
-}
-
-/* Footer */
-
-footer {
-  padding: 35px 20px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-  background: rgba(0,0,0,.2);
-  color: var(--muted);
-}
-
-/* Scrollbar */
-
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: #070812;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--primary), var(--secondary));
-  border-radius: 20px;
-}
-
-/* Animations */
-
-@keyframes gradientFlow {
-  to {
-    background-position: 250% center;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes floating {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* Hero floating effect */
-
-header h1 {
-  animation:
-    gradientFlow 6s linear infinite,
-    floating 5s ease-in-out infinite;
-}
-
-/* Social links */
-
-footer a,
-section a {
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-shadow: 0 0 15px var(--secondary);
-}
-
-/* Mobile responsive */
-
-@media (max-width: 768px) {
-  main {
-    width: 90%;
-  }
-
-  section {
-    padding: 40px 0;
-  }
-
-  header h1,
-  h1 {
-    letter-spacing: -1.5px;
-  }
-
-  nav {
-    gap: 5px;
-    padding: 12px;
-  }
-
-  nav a {
-    padding: 7px 11px;
-    font-size: 13px;
-  }
-
-  article,
-  .card,
-  [class*="card"] {
-    padding: 19px;
-  }
-
-  button {
-    max-width: 100%;
-  }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
+/* Stat Numbers (4+ Years Quotex, 7.5+ Years Free Fire) */
+.stat-number, .stat-box strong, .stat-box h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
