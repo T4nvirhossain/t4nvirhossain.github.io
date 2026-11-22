@@ -9,7 +9,7 @@
   <title>Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran</title>
   <meta name="title" content="Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran" />
   <meta name="description" content="Official 3D portfolio of Tanvir Hossain (TANVIR TRADER / @T4nviRhossain). Based in Italy (4.5+ years), roots in Madaripur, Bangladesh. 4+ years Binary Options (Quotex), Forex Trader & 7.5+ years Free Fire veteran." />
-  <meta name="keywords" content="Tanvir Hossain, TANVIR TRADER, T4nviRhossain, tanvir_hossain_91, Tanvir Hossain Madaripur, Tanvir Trader Italy, Quotex Trader, Forex Trader, Free Fire Veteran, Gaming Portfolio" />
+  <meta name="keywords" content="Tanvir Hossain, TANVIR TRADER, T4nviRhossain, tanvir_hossain_91, Tanvir Hossain Madaripur, Tanvir Trader Italy, Quotex Trader, Forex Trader, Free Fire Veteran" />
   <meta name="author" content="Tanvir Hossain" />
   <meta name="robots" content="index, follow" />
 
@@ -17,6 +17,7 @@
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Tanvir Hossain | TANVIR TRADER (@T4nviRhossain)" />
   <meta property="og:description" content="🇮🇹 Italy (4.5+ Yrs) | 🇧🇩 Madaripur, BD • 4+ Yrs Quotex & Forex Trader • 7.5+ Yrs Free Fire Veteran." />
+  <meta property="og:image" content="https://github.io" />
 
   <!-- Structured Data (JSON-LD) for Google & AI Search Engines -->
   <script type="application/ld+json">
@@ -25,6 +26,7 @@
     "@type": "Person",
     "name": "Tanvir Hossain",
     "alternateName": ["TANVIR TRADER", "T4nviRhossain", "tanvir_hossain_91"],
+    "image": "https://github.io",
     "description": "Independent Market Trader (Quotex Binary Options & Forex) and 7.5+ year Free Fire gaming veteran originally from Madaripur, Bangladesh and living in Italy for 4.5+ years.",
     "jobTitle": "Market Trader & Gaming Veteran",
     "homeLocation": { "@type": "Country", "name": "Italy" },
@@ -45,13 +47,12 @@
   <style>
     :root {
       --bg-void: #03050c;
-      --bg-panel: rgba(11, 17, 32, 0.86);
-      --bg-card: rgba(255, 255, 255, 0.038);
+      --bg-panel: rgba(11, 17, 32, 0.88);
+      --bg-card: rgba(255, 255, 255, 0.04);
       --neon-cyan: #00f2fe;
       --neon-purple: #a855f7;
       --neon-emerald: #10b981;
       --neon-amber: #f59e0b;
-      --neon-pink: #ec4899;
       --text-main: #f8fafc;
       --text-dim: #94a3b8;
       --border-subtle: rgba(255, 255, 255, 0.09);
@@ -64,7 +65,6 @@
       font-family: 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
       -webkit-user-select: none;
       -moz-user-select: none;
-      -ms-user-select: none;
       user-select: none;
     }
 
@@ -112,10 +112,7 @@
       border-radius: 28px;
       padding: 40px;
       border: 1px solid rgba(0, 242, 254, 0.35);
-      box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.85),
-        0 0 38px rgba(0, 242, 254, 0.1),
-        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 38px rgba(0, 242, 254, 0.1);
       transform-style: preserve-3d;
       transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
       animation: entrance3D 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -126,30 +123,69 @@
       to { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); }
     }
 
+    /* Header with 3D Profile Photo Frame */
     .top-header {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      gap: 20px;
       padding-bottom: 26px;
       border-bottom: 1px solid var(--border-subtle);
       transform: translateZ(38px);
     }
 
+    .profile-identity {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.35);
+      flex-shrink: 0;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0a1020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--neon-cyan);
+    }
+
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .badge-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
+      gap: 7px;
+      margin-bottom: 10px;
     }
 
     .tag-pill {
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 5px 13px;
+      padding: 4px 12px;
       border-radius: 999px;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
@@ -159,9 +195,8 @@
     .pill-bd { background: rgba(245, 158, 11, 0.14); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }
 
     h1 {
-      font-size: 2.55rem;
+      font-size: 2.35rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
       background: linear-gradient(95deg, #ffffff 25%, var(--neon-cyan) 65%, #c084fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -169,8 +204,8 @@
 
     .sub-line {
       color: var(--text-dim);
-      font-size: 1rem;
-      margin-top: 6px;
+      font-size: 0.98rem;
+      margin-top: 4px;
     }
 
     .action-btn {
@@ -192,15 +227,14 @@
       box-shadow: 0 0 22px rgba(0, 242, 254, 0.35);
     }
 
-    .action-btn:active {
-      transform: scale(0.94);
-    }
+    .action-btn:active { transform: scale(0.94); }
 
+    /* Stats Row */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 16px;
-      margin: 28px 0;
+      margin: 26px 0;
       transform: translateZ(28px);
     }
 
@@ -221,10 +255,6 @@
       box-shadow: 0 14px 32px rgba(0, 242, 254, 0.15);
     }
 
-    .stat-tile:active {
-      transform: scale(0.97);
-    }
-
     .stat-tile.gaming:hover {
       border-color: var(--neon-purple);
       box-shadow: 0 14px 32px rgba(168, 85, 247, 0.2);
@@ -239,90 +269,39 @@
     }
 
     .stat-tile .big-num {
-      font-size: 1.38rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--neon-cyan);
       margin-bottom: 5px;
     }
 
-    .stat-tile.gaming .big-num {
-      color: #d8b4fe;
-    }
+    .stat-tile.gaming .big-num { color: #d8b4fe; }
+    .stat-tile .desc { font-size: 0.84rem; color: #cbd5e1; line-height: 1.45; }
 
-    .stat-tile .desc {
-      font-size: 0.84rem;
-      color: #cbd5e1;
-      line-height: 1.45;
-    }
-
-    .dual-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 22px;
-      margin-bottom: 28px;
-      transform: translateZ(22px);
-    }
-
-    @media (max-width: 820px) {
-      .dual-grid { grid-template-columns: 1fr; }
-    }
-
-    .glass-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+    /* Forex Trading Live Update Board */
+    .forex-board {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.06), rgba(16, 185, 129, 0.05));
+      border: 1px solid rgba(0, 242, 254, 0.25);
       border-radius: 20px;
-      padding: 24px;
+      padding: 22px 24px;
+      margin-bottom: 26px;
+      transform: translateZ(25px);
     }
 
-    .glass-box h2 {
-      font-size: 1.15rem;
+    .board-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
       margin-bottom: 14px;
+    }
+
+    .board-head h2 {
+      font-size: 1.12rem;
       color: #ffffff;
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-
-    .glass-box p {
-      color: var(--text-dim);
-      font-size: 0.94rem;
-      line-height: 1.72;
-      margin-bottom: 12px;
-    }
-
-    .glass-box p:last-child { margin-bottom: 0; }
-
-    .quest-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .quest-item {
-      padding-left: 14px;
-      border-left: 2px solid var(--neon-cyan);
-    }
-
-    .quest-item.ff {
-      border-left-color: var(--neon-purple);
-    }
-
-    .quest-item strong {
-      display: block;
-      font-size: 0.92rem;
-      color: #f1f5f9;
-      margin-bottom: 3px;
-    }
-
-    .quest-item span {
-      font-size: 0.83rem;
-      color: var(--text-dim);
-      line-height: 1.45;
-      display: block;
-    }
-
-    .social-section {
-      transform: translateZ(26px);
     }
 
