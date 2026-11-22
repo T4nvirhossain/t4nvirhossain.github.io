@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="UdOtcBcV9M1EGRVM60NECrWl9JPXjtpVkQw_QRxQGQQ" />
   
-  <!-- Primary Google SEO Meta Tags -->
   <title>Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran</title>
   <meta name="title" content="Tanvir Hossain (@T4nviRhossain) | TANVIR TRADER & Free Fire Veteran" />
   <meta name="description" content="Official 3D portfolio of Tanvir Hossain (TANVIR TRADER / @T4nviRhossain). Based in Italy (4.5+ years), roots in Madaripur, Bangladesh. 4+ years Binary Options (Quotex), Forex Trader & 7.5+ years Free Fire veteran." />
@@ -13,13 +12,11 @@
   <meta name="author" content="Tanvir Hossain" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph / Social Media Link Preview -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Tanvir Hossain | TANVIR TRADER (@T4nviRhossain)" />
   <meta property="og:description" content="🇮🇹 Italy (4.5+ Yrs) | 🇧🇩 Madaripur, BD • 4+ Yrs Quotex & Forex Trader • 7.5+ Yrs Free Fire Veteran." />
   <meta property="og:image" content="https://github.io" />
 
-  <!-- Structured Data (JSON-LD) for Google & AI Search Engines -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,15 +112,8 @@
       box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 38px rgba(0, 242, 254, 0.1);
       transform-style: preserve-3d;
       transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1);
-      animation: entrance3D 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    @keyframes entrance3D {
-      from { opacity: 0; transform: translateY(28px) rotateX(6deg) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) rotateX(0deg) scale(1); }
-    }
-
-    /* Header with 3D Profile Photo Frame */
     .top-header {
       display: flex;
       flex-wrap: wrap;
@@ -229,7 +219,6 @@
 
     .action-btn:active { transform: scale(0.94); }
 
-    /* Stats Row */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -278,7 +267,6 @@
     .stat-tile.gaming .big-num { color: #d8b4fe; }
     .stat-tile .desc { font-size: 0.84rem; color: #cbd5e1; line-height: 1.45; }
 
-    /* Forex Trading Live Update Board */
     .forex-board {
       background: linear-gradient(135deg, rgba(0, 242, 254, 0.06), rgba(16, 185, 129, 0.05));
       border: 1px solid rgba(0, 242, 254, 0.25);
@@ -305,3 +293,25 @@
       gap: 8px;
     }
 
+    .live-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--neon-emerald);
+      box-shadow: 0 0 10px var(--neon-emerald);
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .status-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #6ee7b7;
+      background: rgba(16, 185, 129, 0.14);
+      padding: 4px 12px;
+      border-radius: 999px;
